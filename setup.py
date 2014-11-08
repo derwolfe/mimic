@@ -25,7 +25,8 @@ setup(
     package_dir={'mimic': 'mimic'},
     include_package_data=True,
     license="Apache License, Version 2.0",
+    install_requires=INSTALL_REQUIRES,
     # for py2app
     app=['start-app.py'],
-    setup_requires=['py2app'] + INSTALL_REQUIRES
+    setup_requires=['py2app']
 )
