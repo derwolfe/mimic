@@ -1,27 +1,24 @@
 """
-Setup file for mimic
+cx_Freeze setup file for mimic
 """
+from setuptools import find_packages
+from cx_Freeze import setup, Executable
 
-# if you are wanting to build using py2app, you basically have to use
-# the brew installed version of python. py2app will not create a package
-# using the system python insalled on os x. To use it, (especially if you
-# using pyenv), the brewed python should have the highest precendence
-# in your PATH.
-# e.g. export PATH=/usr/local/bin:/usr/bin
+OPTIONS = {
+    'build_dmg': {
+        'namespace_packages': ['zope', 'six'],
+        'includes': [
+            'treq',
+            'klein',
+            'jsonschema',
+            'six',
+            'characteristic',
+            'twisted.syslog'
+        ]
+    },
+}
 
-from setuptools import setup, find_packages
-from cx_freeze import setup, Executable
-
-INSTALL_REQUIRES = [
-    "characteristic==14.1.0",
-    "klein==0.2.1",
-    "twisted>=13.2.0",
-    "jsonschema==2.0",
-    "treq",
-    "six"
-]
-
-executables = [
+EXECUTABLES = [
     Executable('start-app.py'),
 ]
 
@@ -33,5 +30,14 @@ setup(
     package_dir={'mimic': 'mimic'},
     include_package_data=True,
     license="Apache License, Version 2.0",
-    install_requires=INSTALL_REQUIRES,
+    install_requires=[
+        "characteristic==14.1.0",
+        "klein==0.2.1",
+        "twisted>=13.2.0",
+        "jsonschema==2.0",
+        "treq",
+        "six"
+    ],
+    options=OPTIONS,
+    executables=EXECUTABLES
 )
