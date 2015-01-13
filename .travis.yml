@@ -27,7 +27,7 @@ matrix:
       compiler: gcc
     - os: linux
     #  compiler: clang
-    #
+
     # don't build mac app on linux
     #- os: linux
     #  env: TOX_ENV=bundle
