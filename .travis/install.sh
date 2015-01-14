@@ -40,9 +40,7 @@ if [[ "$DARWIN" = true ]]; then
             sudo python get-pip.py
             ;;
         bundle)
-            brew upgrade pyenv
-	    env PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install 2.7.8
-            pyenv global 2.7.8
+	    brew install python
             ;;
     esac
     pyenv rehash
@@ -79,5 +77,4 @@ fi
 sudo pip install virtualenv
 virtualenv ~/.venv
 source ~/.venv/bin/activate
-which python
 pip install tox coveralls
