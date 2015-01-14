@@ -41,7 +41,7 @@ if [[ "$DARWIN" = true ]]; then
             ;;
         bundle)
             brew upgrade pyenv
-            pyenv install 2.7.8
+	    env PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install 2.7.8
             pyenv global 2.7.8
             ;;
     esac
