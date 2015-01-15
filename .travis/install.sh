@@ -31,9 +31,6 @@ if [[ "$DARWIN" = true ]]; then
         pypy)
 	    # do not like this idea
 	    brew install pypy
-            # brew upgrade pyenv
-            # pyenv install pypy-2.4.0
-            # pyenv global pypy-2.4.0
             ;;
         docs)
             curl -O https://bootstrap.pypa.io/get-pip.py
