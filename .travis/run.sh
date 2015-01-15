@@ -4,6 +4,7 @@ set -e
 set -x
 
 if [[ "${TOX_ENV}" == "bundle" ]]; then
+    # using tox seems to be there problem!
     virtualenv ~/.venv2 -p /usr/local/bin/python2.7
     source ~/.venv2/bin/activate
     pip install -r requirements.txt
