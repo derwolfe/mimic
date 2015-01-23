@@ -3,6 +3,7 @@ Setup file for mimic
 """
 
 from setuptools import setup, find_packages
+from time import sleep
 from twisted.plugin import getPlugins, IPlugin
 from py2app.build_app import py2app
 from mimic import plugins
@@ -40,7 +41,6 @@ class BuildWithCache(py2app):
         This generates `dropin.cache` files for mimic's plugins.
         """
         list(getPlugins(IPlugin, package=plugins))
-        list(getPlugins(IPlugin))
         py2app.run(self)
 
 
