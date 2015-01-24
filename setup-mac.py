@@ -39,7 +39,6 @@ class BuildWithCache(py2app):
         """
         This generates `dropin.cache` files for mimic's plugins.
         """
-        list(getPlugins(IPlugin))
         list(getPlugins(IPlugin, package=plugins))
         py2app.run(self)
 
