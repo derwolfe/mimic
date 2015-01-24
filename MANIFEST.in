@@ -1,0 +1,6 @@
+include *.rst *.txt LICENSE tox.ini .travis.yml docs/Makefile .coveragerc setup-mac.py Makefile Dockerfile README.md docs/spelling_wordlist.txt
+recursive-include .travis *.sh
+recursive-include twisted *.py
+recursive-include bundle *.py
+recursive-include docs *.py
+recursive-include docs *.rst
