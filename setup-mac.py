@@ -3,9 +3,8 @@ Setup file for mimic
 """
 
 from setuptools import setup, find_packages
-from time import sleep
-from twisted.plugin import getPlugins, IPlugin
 from py2app.build_app import py2app
+from twisted.plugin import getPlugins, IPlugin
 from mimic import plugins
 
 
@@ -52,8 +51,8 @@ setup(
     packages=find_packages(exclude=[]) + ["twisted.plugins"],
     package_dir={'mimic': 'mimic'},
     setup_requires=[
-        "klein==0.2.1"
-        "twisted==14.0.0",
+        "klein==0.2.1",
+        "twisted==14.0.2",
         "jsonschema==2.0",
         "treq==0.2.0",
         "characteristic==14.2.0",
@@ -65,9 +64,10 @@ setup(
         "macholib==1.5.1",
         "modulegraph==0.11.1",
         "py2app==0.8.1",
-        "pyobjc-framework-Cocoa==3.0.4",
-        "pyobjc-framework-CFNetwork==3.0.4"
-    ]
+        "pyobjc-core",
+        "pyobjc-framework-Cocoa",
+        "pyobjc-framework-CFNetwork==3.0"
+    ],
     cmdclass={
         'py2app': BuildWithCache
     },
