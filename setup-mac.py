@@ -19,7 +19,7 @@ PLIST = dict(
     CFBundleShortVersionString  = ' '.join([NAME, VERSION]),
     CFBundleGetInfoString       = NAME,
     CFBundleExecutable          = NAME,
-    CFBundleIdentifier          = 'com.yourdn.%s' % ID,
+    CFBundleIdentifier          = 'com.mimic.%s' % ID,
     LSUIElement                 = '1',
     LSMultipleInstancesProhibited = '1',
 )
@@ -49,6 +49,25 @@ setup(
     version='1.3.0',
     description='An API-compatible mock service',
     app=[APP_DATA],
+    packages=find_packages(exclude=[]) + ["twisted.plugins"],
+    package_dir={'mimic': 'mimic'},
+    setup_requires=[
+        "klein==0.2.1"
+        "twisted==14.0.0",
+        "jsonschema==2.0",
+        "treq==0.2.0",
+        "characteristic==14.2.0",
+        "six==1.6.1",
+        "unittest2==0.5.1",
+        # py2app has had a few bugs that need to be resolved
+        # this combination of dependencies seem to work.
+        "altgraph==0.12",
+        "macholib==1.5.1",
+        "modulegraph==0.11.1",
+        "py2app==0.8.1",
+        "pyobjc-framework-Cocoa==3.0.4",
+        "pyobjc-framework-CFNetwork==3.0.4"
+    ]
     cmdclass={
         'py2app': BuildWithCache
     },
