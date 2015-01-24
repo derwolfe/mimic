@@ -1,7 +1,6 @@
 all: clean build test
 
 build:
-	pip install -e .
 	python setup-mac.py py2app
 
 test:
