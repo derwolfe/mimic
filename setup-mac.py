@@ -9,7 +9,7 @@ from mimic import plugins
 
 
 NAME = 'mimic'
-VERSION = '0.1'
+VERSION = '1.3.0'
 ID = 'mimic'
 SCRIPT='bundle/start-app.py'
 TEST_SCRIPT='bundle/run-tests.py'
@@ -45,8 +45,8 @@ class BuildWithCache(py2app):
 
 
 setup(
-    name='mimic',
-    version='1.3.0',
+    name=NAME,
+    version=VERSION,
     description='An API-compatible mock service',
     app=[APP_DATA],
     packages=find_packages(exclude=[]) + ["twisted.plugins"],
